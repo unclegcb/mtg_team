@@ -30,5 +30,14 @@ dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = views
 dependencies[] = views_ui
+dependencies[] = ckeditor
+dependencies[] = default_menu_link
+dependencies[] = field_collection
+dependencies[] = field_collection_table
+dependencies[] = libraries
+
+; Custom
+dependencies[] = mtg_team_decks
+dependencies[] = mtg_team_forums
 
 files[] = mtg_team.profile
