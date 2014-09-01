@@ -93,6 +93,7 @@ function mtg_team_decks_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="node/add/deck">Add Deck</a>';
   /* Field: Content: Tier */
   $handler->display->display_options['fields']['field_tier']['id'] = 'field_tier';
