@@ -170,20 +170,27 @@ function mtg_team_decks_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_side'
-  $field_bases['field_side'] = array(
+  // Exported field_base: 'field_sideboard'
+  $field_bases['field_sideboard'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_side',
+    'field_name' => 'field_sideboard',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_tier'
