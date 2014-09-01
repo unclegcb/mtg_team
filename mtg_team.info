@@ -4,7 +4,6 @@ core = 7.x
 
 ; Core
 dependencies[] = block
-dependencies[] = contact
 dependencies[] = dblog
 dependencies[] = field_ui
 dependencies[] = file
@@ -37,6 +36,7 @@ dependencies[] = field_collection_table
 dependencies[] = libraries
 
 ; Custom
+dependencies[] = mtg_team_base
 dependencies[] = mtg_team_decks
 dependencies[] = mtg_team_forums
 
