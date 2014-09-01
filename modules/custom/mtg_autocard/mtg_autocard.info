@@ -1,0 +1,5 @@
+name = MTG Autocard
+description = Provides an autocomplete input widget for text fields to populate with MTG card names.
+version = 7.x-0.1
+core = 7.x
+package = MTG Autocard

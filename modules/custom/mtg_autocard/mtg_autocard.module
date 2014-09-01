@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * @file
+ * MTG Autocard Field Functionality.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function mtg_autocard_menu() {
+  $items = array();
+
+  $items['mtg_autocard/lookup'] = array(
+    'title' => 'Autocomplete MTG Cards',
+    'page callback' => 'mtg_autocard_autocomplete',
+    'access callback' => TRUE,
+    'page arguments' => array(),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Query the mtg card api for options.
+ */
+function mtg_autocard_autocomplete($string) {
+  $url = "http://api.mtgapi.com/v1/card/name/" . $string;
+  $response = drupal_http_request($url);
+  $options = array();
+  if ($response->code == 200) {
+    $result = drupal_json_decode($response->data);
+    foreach ($result as $item) {
+      $options[$item['name']] = $item['name'];
+    }
+  }
+  drupal_json_output($options);
+}
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function mtg_autocard_field_widget_info() {
+  $return = array();
+
+  $return['mtg_autocard_input'] = array(
+    'label' => t('MTG Lookup'),
+    'field types' => array('text'),
+    'settings' => array(),
+    'behaviors' => array(
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+      'default value' => FIELD_BEHAVIOR_DEFAULT,
+    ),
+  );
+
+  return $return;
+}
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function mtg_autocard_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  if ($instance['widget']['type'] == 'mtg_autocard_input') {
+    // Start with all the basic configuration, including Title & Description:
+    $element['value'] = $element;
+    // Add our custom mtg_autocard type & configuration:
+    $element['value']['#type'] = 'mtg_autocard';
+    $default = isset($instance['default_value'][0]['value']) ? $instance['default_value'][0]['value'] : '';
+    $element['value']['#default_value'] = isset($items[0]['value']) ? $items[0]['value'] : $default;
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_element_info().
+ */
+function mtg_autocard_element_info() {
+  $types = array();
+
+  $types['mtg_autocard'] = array(
+    '#input' => TRUE,
+    '#theme' => array('textfield'),
+    '#theme_wrappers' => array('form_element'),
+    '#process' => array(
+      'mtg_autocard_element_process',
+    ),
+    '#autocomplete_path' => 'mtg_autocard/lookup',
+  );
+
+  return $types;
+}
+
+
+/**
+ * Process function for `rlis_autosuggest` elements.
+ */
+function mtg_autocard_element_process($element) {
+  $element['#autocomplete_path'] = 'mtg_autocard/lookup';
+  return $element;
+}

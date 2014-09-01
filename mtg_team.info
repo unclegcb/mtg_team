@@ -39,5 +39,6 @@ dependencies[] = libraries
 dependencies[] = mtg_team_base
 dependencies[] = mtg_team_decks
 dependencies[] = mtg_team_forums
+dependencies[] = mtg_autocard
 
 files[] = mtg_team.profile
