@@ -127,7 +127,7 @@ libraries[jquery-cluetip][download][type] = git
 libraries[jquery-cluetip][download][url] = git@github.com:kswedberg/jquery-cluetip.git
 libraries[jquery-cluetip][directory_name] = "jquery-cluetip"
 libraries[jquery-cluetip][type] = "library"
-libraries[jquery-cluetip][revision] = "647827c"
+libraries[jquery-cluetip][download][revision] = "647827c"
 
 ;-----------------------------------------
 ; Themes

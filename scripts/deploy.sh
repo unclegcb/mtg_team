@@ -136,6 +136,7 @@ scripts/build.sh -y $TEMP_BUILD/drupal
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/scripts
 # due to issue 1875510 on d.o, we have to hack the profile if we are on drush 5.8:
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/.git
+rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/.gitignore
 rm -rf $TEMP_BUILD/drupal/profiles/$PROJECT/libraries/*/.git
 # Protect our remote .git, then blow away our remote Drupal root and replace it with our new one.
 # We have to do this because sometime the remote .git is in the Drupal root (Pantheon) and sometimes

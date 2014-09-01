@@ -1,6 +1,6 @@
 #!/bin/bash
 
 protectfiles () {
-	git checkout sites/default/settings.php
+	echo 'Skipping file protect'
 }
 MULTIDEV=true
