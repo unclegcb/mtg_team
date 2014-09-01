@@ -1,9 +1,16 @@
 name = Forums
 core = 7.x
 package = MTG Team
+dependencies[] = features
+dependencies[] = node
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[user_permission][] = create forum content
+features[user_permission][] = delete any forum content
+features[user_permission][] = delete own forum content
+features[user_permission][] = edit any forum content
+features[user_permission][] = edit own forum content
 features[views_view][] = forums
 features_exclude[dependencies][ctools] = ctools
 project path = profiles/mtg_team/modules/custom
