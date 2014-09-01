@@ -6,6 +6,7 @@ dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = field_collection_table
 dependencies[] = list
+dependencies[] = mtg_autocard
 dependencies[] = node
 dependencies[] = number
 dependencies[] = options

@@ -35,11 +35,11 @@ function mtg_team_decks_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'mtg_autocard',
       'settings' => array(
         'size' => 30,
       ),
-      'type' => 'text_textfield',
+      'type' => 'mtg_autocard_input',
       'weight' => 0,
     ),
   );
