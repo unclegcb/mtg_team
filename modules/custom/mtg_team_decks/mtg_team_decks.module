@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Code for the Decks feature.
+ */
+
+include_once 'mtg_team_decks.features.inc';
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function mtg_team_decks_entity_view_alter(&$build, $type) {
+  if ($type == 'field_collection_item') {
+    $build['field_cardname'][0]['#markup'] = '<a class="mtg_card_popup" rel="nofollow" target="_blank" href="/mtg_card_popup/' . $build['field_cardname'][0]['#markup'] . '">' . $build['field_cardname'][0]['#markup'] . '</a>';
+  }
+}
