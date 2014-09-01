@@ -34,7 +34,9 @@ function mtg_team_base_user_default_permissions() {
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'comment',
   );
 
@@ -77,20 +79,6 @@ function mtg_team_base_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'access site-wide contact form'.
-  $permissions['access site-wide contact form'] = array(
-    'name' => 'access site-wide contact form',
-    'roles' => array(),
-    'module' => 'contact',
-  );
-
-  // Exported permission: 'access user contact forms'.
-  $permissions['access user contact forms'] = array(
-    'name' => 'access user contact forms',
-    'roles' => array(),
-    'module' => 'contact',
-  );
-
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
@@ -126,13 +114,6 @@ function mtg_team_base_user_default_permissions() {
     'name' => 'administer comments',
     'roles' => array(),
     'module' => 'comment',
-  );
-
-  // Exported permission: 'administer contact forms'.
-  $permissions['administer contact forms'] = array(
-    'name' => 'administer contact forms',
-    'roles' => array(),
-    'module' => 'contact',
   );
 
   // Exported permission: 'administer content types'.
@@ -343,7 +324,9 @@ function mtg_team_base_user_default_permissions() {
   // Exported permission: 'edit own comments'.
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'comment',
   );
 
@@ -399,7 +382,9 @@ function mtg_team_base_user_default_permissions() {
   // Exported permission: 'post comments'.
   $permissions['post comments'] = array(
     'name' => 'post comments',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'comment',
   );
 
@@ -427,7 +412,9 @@ function mtg_team_base_user_default_permissions() {
   // Exported permission: 'skip comment approval'.
   $permissions['skip comment approval'] = array(
     'name' => 'skip comment approval',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'comment',
   );
 
